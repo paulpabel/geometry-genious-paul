@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Exploring</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="text-7xl text-red font-bold text-center mt-10">Geometry</h1>
+    </header>
+
+    <section>
+        <!-- ist div starts-->
+    <div class="flex gap-2">
+        <!-- 1st card -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="./images/triangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Triangle</h2>
+              <p>Area(A) = 0.5 * b * h </p>
+              <p class="my-2">
+              <input  id="base-input-field" class="bg-gray-200 border w-24 text-xl px-2" type="number" placeholder="base"><span class="ml-2" >cm</span>
+              <input id="height-input-field" class=" ml-2 bg-gray-200 border w-24 text-xl px-2"  type="number" placeholder="height"><span class="ml-2">cm</span>
+               </p>
+               <p class="font-medium">Area: <span id="total-area1">0</span> cm<sup>2</sup> </p>
+              <div class="">
+                <button onclick="CommonForAll()" class="btn btn-primary w-64">Calculate</button>
+              </div>
+            </div>
+          </div>
+        <!-- 1st card ends -->
+        <!-- 2ndt card -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="./images/rectangle.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Reactangle</h2>
+              <p>Area(A) = w * l </p>
+              <p class="my-2">
+              <input  id="width-input-field" class="bg-gray-200 border w-24 text-xl px-2" type="number" placeholder="width"><span class="ml-2" >cm</span>
+              <input id="length-input-field" class=" ml-2 bg-gray-200 border w-24 text-xl px-2"  type="number" placeholder="length"><span class="ml-2">cm</span>
+               </p>
+               <p class="font-medium">Area: <span id="total-area2">0</span> cm<sup>2</sup> </p>
+              <div class="">
+                <button onclick="CommonForAll()"  class="btn btn-secondary w-64">Calculate</button>
+              </div>
+            </div>
+          </div>
+        <!-- 2nd card ends -->
+        <!-- third card -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="./images/parallelogram.png" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Parallelogram</h2>
+              <p>Area(A) =  b * h </p>
+              <p class="my-2">
+              <input  id="base2-input-field" class="bg-gray-200 border w-24 text-xl px-2" type="number" placeholder="base"><span class="ml-2" >cm</span>
+              <input id="height2-input-field" class=" ml-2 bg-gray-200 border w-24 text-xl px-2"  type="number" placeholder="height"><span class="ml-2">cm</span>
+               </p>
+
+               <p class="font-medium">Area: <span id="total-area3">0</span> cm<sup>2</sup> </p>
+              <div class="">
+                <button onclick="CommonForAll()"  class="btn btn-accent w-64">Calculate</button>
+              </div>
+            </div>
+          </div>
+        <!-- 3rd card ends -->
+        <!-- 4th card -->
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <h1 class="text-3xl font-bold text-center text-black underline decoration-4">Area Calculations</h1>
+
+
+          </div>
+        <!-- 4th card ends -->
+     
+
+        
+
+
+
+
+    </div>
+     <!-- 1st div ends -->
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+  <script>
+function getElementValueById(elementId){
+    const getElement = document.getElementById(elementId);
+    const getElementString = getElement.value;
+    const getValue = parseFloat(getElementString);
+    return getValue;
+}
+
+function setInnerTextValue(passElement, newValue){
+    const catchId = document.getElementById(passElement);
+    catchId.innerText = newValue;
+
+}
+
+
+function CommonForAll(){
+    const triangleAreaBase = getElementValueById("base-input-field");
+    const triangleAreaHeight = getElementValueById("height-input-field");
+    area = 0.5 *triangleAreaBase * triangleAreaHeight;
+    setInnerTextValue("total-area1", area);
+
+
+
+     const rectangleAreaValue = getElementValueById("width-input-field");
+     const rectangleAreaLength = getElementValueById("length-input-field");
+     rectangleArea = rectangleAreaValue * rectangleAreaLength;
+     setInnerTextValue("total-area2", rectangleArea);
+
+ 
+
+      const parallelogramArea = getElementValueById("base2-input-field");
+      const parallelogramHeight = getElementValueById("height2-input-field");
+      parallelogramAreaTotal = parallelogramArea * parallelogramHeight;
+      setInnerTextValue("total-area3", parallelogramAreaTotal);
+
+   
+    
+    
+
+}
+
+
+
+
+
+
+  </script>  
+</body>
+</html>
